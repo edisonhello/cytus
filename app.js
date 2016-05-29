@@ -31,11 +31,8 @@ setInterval(function() {
 }, 1000);
 
 io.on('connection',function(socket){
-    socket.on('xml',function(str){
-        console.log(str);
+    socket.on('xml',function(str,ps){
         var res = plist.parse(str);
-        //console.log(res);
-        //console.log(typeof(res));
         
         var obj = {};
 
@@ -77,12 +74,22 @@ io.on('connection',function(socket){
             }
         }
 
-        //console.log(obj);
         
         mongo.connect('mongodb://localhost:27017/cytus',function(err,db){
             if(err) throw err;
-            var ins = {time:when,score:obj}
+            var ins = {time:when,score:obj,ps:ps}
             db.collection('cytus').insert(ins);
+        })
+    })
+    socket.on('give all',function(){
+        mongo.connect('mongodb://localhost:27017/cytus',function(err,db){
+            db.collection('cytus').find({},{_id:0},function(err,res){
+                if(err) throw err;
+                res.toArray(function(err,res){
+                    if(err) throw err;
+                    socket.emit('this is all',res);
+                })
+            })
         })
     })
 })

@@ -1,24 +1,148 @@
 <html>
 <head>
 <title>cytus</title>
+<style>
+    .score{
+        text-align: right;
+    }
+    .played{
+        text-align: right;
+    }
+    .TP{
+        text-align: right;
+        padding-right: 0;
+    }
+    .TPl{
+        text-align: left;
+        padding-left: 0;
+    }
+    .midtitle{
+        text-align: center;
+    }
+    .ptsM{
+        color: red;
+    }
+    .TPh{
+        color: green;
+    }
+    .ps{
+        position: relative;
+        right: -100px;
+        bottom: 0;
+    }
+</style>
 </head>
 <body>
 <input type="file" id="file" onchange="getfile(event)"><br>
-
+<input id="ps">
+<input type="button" id="sub"><br><br>
+<select id="which"></select><input type="button" id="update">
+<div id="showps" class="ps"></div>
+<table id="here"></table>
 </body>
 </html>
 <script src="/socket.io/socket.io.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script>
-    var socket = io("http://210.71.78.200:2317");
+    var socket = io("http://weak2317.infor.org");
 
+    var content;
     function getfile(event){
         var file = event.target.files[0];
         var r = new FileReader();
         r.onload = function(event){
-            console.log(event.target.result);
-            socket.emit('xml',event.target.result);
+            // console.log(event.target.result);
+            content = event.target.result;
+            //socket.emit('xml',event.target.result,ps);
         }
         r.readAsText(file);
     }
+
+    document.getElementById('sub').onclick = function(){
+        var ps = document.getElementById('ps').value;
+        console.log(content)
+        socket.emit('xml',content,ps);
+    }
+
+    socket.emit('give all');
+    socket.on('this is all',function(all){
+        console.log(all);
+        
+        for(var i=0;i<all.length;i++){
+            $('#which').append("<option value='"+i+"'>"+(all[i]["time"])+"</option>");
+        }
+
+
+        document.getElementById('update').onclick = function(){
+            var choosed = document.getElementById('which').value;
+            console.log(choosed);
+            viewthis = all[choosed];
+            console.log(viewthis);
+            var append = "<tr><td>";
+            append += viewthis["time"] + "</tr>";
+            append += "<tr><td>song name</td><td class='midtitle'>score</td><td class='midtitle' colspan='2'>TP</td><td>times</td></tr>";
+
+            for(var key in viewthis["score"]){
+                var song = viewthis["score"][key];
+                append += "<tr";
+                if(song[0]["TP"]==100 && song[1]["TP"]==100){
+                    append += " class='TPh'"
+                }
+                append += ">"
+
+                append += "<td rowspan='2'";
+                if(song[0]["score"]!=1000000 || song[1]["score"]!=1000000){
+                    append += " class='ptsM'";
+                }
+                append += ">"+key+"</td>";
+                var fixTP = [],strTP = [],lenTP = [];
+                fixTP[0] = song[0]["TP"].toFixed(2);
+                fixTP[1] = song[1]["TP"].toFixed(2);
+                strTP[0] = fixTP[0].toString();
+                strTP[1] = fixTP[1].toString();
+                lenTP[0] = strTP[0].length;
+                lenTP[1] = strTP[1].length;
+                if(song[0]["score"]!=1000000){
+                    append += "<td class='score ptsM'>"+song[0]["score"]+"</td>";
+                    append += "<td class='TP ptsM'>"+strTP[0].substring(0,lenTP[0]-3)+"</td>";
+                    append += "<td class='TPl ptsM'>"+strTP[0].substring(lenTP[0]-3,lenTP[0])+"</td>";
+                    append += "<td class='played ptsM'>"+song[0]["played"]+"</td>";
+                }
+                else if(song[0]["TP"]!=100){
+                    append += "<td class='score'>"+song[0]["score"]+"</td>";
+                    append += "<td class='TP'>"+strTP[0].substring(0,lenTP[0]-3)+"</td>";
+                    append += "<td class='TPl'>"+strTP[0].substring(lenTP[0]-3,lenTP[0])+"</td>";
+                    append += "<td class='played'>"+song[0]["played"]+"</td>";
+                }
+                else{
+                    append += "<td class='score TPh'>"+song[0]["score"]+"</td>";
+                    append += "<td class='TP TPh'>"+strTP[0].substring(0,lenTP[0]-3)+"</td>";
+                    append += "<td class='TPl TPh'>"+strTP[0].substring(lenTP[0]-3,lenTP[0])+"</td>";
+                    append += "<td class='played TPh'>"+song[0]["played"]+"</td>";
+                }
+
+                if(song[1]["score"]!=1000000){
+                    append += "</tr><tr class='ptsM'>";
+                }
+                else if(song[1]["TP"]==100){
+                    append += "</tr><tr class='TPh'>";
+                }
+                else{
+                    append += "</tr><tr>";
+                }
+                append += "<td class='score'>"+song[1]["score"]+"</td>";
+                append += "<td class='TP'>"+strTP[1].substring(0,lenTP[1]-3)+"</td>";
+                append += "<td class='TPl'>"+strTP[1].substring(lenTP[1]-3,lenTP[1])+"</td>";
+                append += "<td class='played'>"+song[1]["played"]+"</td>";
+                append += "</tr>";
+            }
+
+            $('#here').empty();
+            $('#here').append(append);
+
+            $('#showps').empty();
+            $('#showps').append(viewthis["ps"]);
+        }
+    })
 
 </script>
