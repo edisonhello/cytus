@@ -12,7 +12,7 @@ var makeallAppend = function(viewthis){
 
         append += "<td rowspan='2'";
         if(song[0]["score"]!=1000000 || song[1]["score"]!=1000000){
-            append += " class='ptsM'";
+            append += " class='ptsuM'";
         }
         append += ">"+key+"</td>";
         var fixTP = [],strTP = [],lenTP = [];
@@ -21,9 +21,9 @@ var makeallAppend = function(viewthis){
         strTP[0] = fixTP[0].toString();
         strTP[1] = fixTP[1].toString();
         if(song[0]["score"]!=1000000){
-            append += "<td class='score ptsM'>"+song[0]["score"]+"</td>";
-            append += "<td class='TP ptsM'>"+fixTP[0]+"</td>";
-            append += "<td class='played ptsM'>"+song[0]["played"]+"</td>";
+            append += "<td class='score ptsuM'>"+song[0]["score"]+"</td>";
+            append += "<td class='TP ptsuM'>"+fixTP[0]+"</td>";
+            append += "<td class='played ptsuM'>"+song[0]["played"]+"</td>";
         }
         else if(song[0]["TP"]!=100){
             append += "<td class='score'>"+song[0]["score"]+"</td>";
@@ -37,7 +37,7 @@ var makeallAppend = function(viewthis){
         }
 
         if(song[1]["score"]!=1000000){
-            append += "</tr><tr class='ptsM'>";
+            append += "</tr><tr class='ptsuM'>";
         }
         else if(song[1]["TP"]==100){
             append += "</tr><tr class='TPh'>";

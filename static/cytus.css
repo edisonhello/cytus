@@ -1,0 +1,25 @@
+.score{
+    text-align: right;
+}
+.played{
+    text-align: right;
+}
+.TP{
+    text-align: right;
+    padding-right: 0;
+    padding-left: 10px;
+}
+.midtitle{
+    text-align: center;
+}
+.ptsuM{
+    color: red;
+}
+.TPh{
+    color: green;
+}
+.ps{
+    position: relative;
+    right: -100px;
+    bottom: 0;
+}
