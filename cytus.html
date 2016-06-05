@@ -27,6 +27,7 @@
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
 <script src="/cytus/static/makeallAppend.js"></script>
+<script src="/cytus/static/makeDiff.js"></script>
 <script>
     var socket = io("http://weak.infor.org");
 
@@ -43,7 +44,9 @@
     document.getElementById('sub').onclick = function(){
         var ps = document.getElementById('ps').value;
         console.log(content)
-        socket.emit('xml',content,ps);
+        if(content!=undefined){
+            socket.emit('xml',content,ps);
+        }
     }
 
     socket.emit('give all');
@@ -58,24 +61,25 @@
             var choosed = document.getElementById('which').value;
             var mod = document.getElementById('mod').value;
 
+            var append = "";
+            var mainobj = all[choosed];
             if(mod=="show all"){
                 viewthis = all[choosed];
                 console.log(viewthis);
                 
-                var append = makeallAppend(viewthis);
-
-                $('#here').empty();
-                $('#here').append(append);
-
-                $('#showps').empty();
-                $('#showps').append(viewthis["ps"]);
+                append = makeallAppend(viewthis);
             }
             if(mod=="diff"){
                 var comp = [all[choosed-1],all[choosed]];
                 console.log(comp);
 
-                var append = makeDiff(comp);
+                append = makeDiff(comp);
             }
+            $('#here').empty();
+            $('#here').append(append);
+
+            $('#showps').empty();
+            $('#showps').append(mainobj["ps"]);
         }
     })
 
