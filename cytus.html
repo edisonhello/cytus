@@ -45,7 +45,6 @@
 </body>
 </html>
 <script src="/socket.io/socket.io.js"></script>
-<script src="/static/songname.js"></script>
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script>
     var socket = io("http://weak2317.infor.org");
@@ -84,7 +83,7 @@
             console.log(viewthis);
             var append = "<tr><td>";
             append += viewthis["time"] + "</tr>";
-            append += "<tr><td>song name</td><td class='midtitle'>score</td><td class='midtitle' colspan='2'>TP</td><td>times</td></tr>";
+            append += "<tr><td>song name</td><td class='midtitle'>score</td><td class='midtitle'>TP</td><td>times</td></tr>";
 
             for(var key in viewthis["score"]){
                 var song = viewthis["score"][key];
@@ -108,20 +107,17 @@
                 lenTP[1] = strTP[1].length;
                 if(song[0]["score"]!=1000000){
                     append += "<td class='score ptsM'>"+song[0]["score"]+"</td>";
-                    append += "<td class='TP ptsM'>"+strTP[0].substring(0,lenTP[0]-3)+"</td>";
-                    append += "<td class='TPl ptsM'>"+strTP[0].substring(lenTP[0]-3,lenTP[0])+"</td>";
+                    append += "<td class='TP ptsM'>"+fixTP[0]+"</td>";
                     append += "<td class='played ptsM'>"+song[0]["played"]+"</td>";
                 }
                 else if(song[0]["TP"]!=100){
                     append += "<td class='score'>"+song[0]["score"]+"</td>";
-                    append += "<td class='TP'>"+strTP[0].substring(0,lenTP[0]-3)+"</td>";
-                    append += "<td class='TPl'>"+strTP[0].substring(lenTP[0]-3,lenTP[0])+"</td>";
+                    append += "<td class='TP'>"+fixTP[0]+"</td>";
                     append += "<td class='played'>"+song[0]["played"]+"</td>";
                 }
                 else{
                     append += "<td class='score TPh'>"+song[0]["score"]+"</td>";
-                    append += "<td class='TP TPh'>"+strTP[0].substring(0,lenTP[0]-3)+"</td>";
-                    append += "<td class='TPl TPh'>"+strTP[0].substring(lenTP[0]-3,lenTP[0])+"</td>";
+                    append += "<td class='TP TPh'>"+fixTP[0]+"</td>";
                     append += "<td class='played TPh'>"+song[0]["played"]+"</td>";
                 }
 
@@ -135,8 +131,7 @@
                     append += "</tr><tr>";
                 }
                 append += "<td class='score'>"+song[1]["score"]+"</td>";
-                append += "<td class='TP'>"+strTP[1].substring(0,lenTP[1]-3)+"</td>";
-                append += "<td class='TPl'>"+strTP[1].substring(lenTP[1]-3,lenTP[1])+"</td>";
+                append += "<td class='TP'>"+fixTP[1]+"</td>";
                 append += "<td class='played'>"+song[1]["played"]+"</td>";
                 append += "</tr>";
             }
