@@ -11,6 +11,7 @@
     .TP{
         text-align: right;
         padding-right: 0;
+        padding-left: 10px;
     }
     .TPl{
         text-align: left;
@@ -36,12 +37,15 @@
 <input type="file" id="file" onchange="getfile(event)"><br>
 <input id="ps">
 <input type="button" id="sub"><br><br>
-<select id="which"></select><input type="button" id="update">
+<select id="which">
+<option id="headopt">choose which</option>
+</select><input type="button" id="update">
 <div id="showps" class="ps"></div>
 <table id="here"></table>
 </body>
 </html>
 <script src="/socket.io/socket.io.js"></script>
+<script src="/static/songname.js"></script>
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script>
     var socket = io("http://weak2317.infor.org");
@@ -53,7 +57,7 @@
         r.onload = function(event){
             // console.log(event.target.result);
             content = event.target.result;
-            //socket.emit('xml',event.target.result,ps);
+            // socket.emit('xml',event.target.result,ps);
         }
         r.readAsText(file);
     }
@@ -69,7 +73,7 @@
         console.log(all);
         
         for(var i=0;i<all.length;i++){
-            $('#which').append("<option value='"+i+"'>"+(all[i]["time"])+"</option>");
+            $('#headopt').after("<option value='"+i+"'>"+(all[i]["time"])+"</option>");
         }
 
 
