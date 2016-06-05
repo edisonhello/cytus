@@ -7,9 +7,15 @@ var mongodb = require('mongodb');
 var mongo = mongodb.MongoClient;
 
 var config = require('./config.json');
+var getSongInfo = require('./static/getSongInfo');
+
+console.log(getSongInfo.getSong("adventure"));
+
 
 var plist = require('plist');
 var fs = require('fs');
+
+app.use('/static',express.static(__dirname+'/static'));
 
 app.get('/cytus', function(req, res) {
 	res.sendFile(__dirname+'/cytus.html', function() {
