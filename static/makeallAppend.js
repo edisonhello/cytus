@@ -27,7 +27,7 @@ var makeallAppend = function(viewthis){
         }
         else if(song[0]["TP"]!=100){
             append += "<td class='score'>"+song[0]["score"]+"</td>";
-            append += "<td class='TP'>"+fixTP[0]+"</td>";
+            gppend += "<td class='TP'>"+fixTP[0]+"</td>";
             append += "<td class='played'>"+song[0]["played"]+"</td>";
         }
         else{

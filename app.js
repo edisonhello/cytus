@@ -31,6 +31,7 @@ io.on('connection',function(socket){
             if(err) throw err;
             var ins = {time:getTime(),score:obj,ps:ps}
             db.collection('cytus').insert(ins);
+            socket.emit('insdone');
         })
     })
 
