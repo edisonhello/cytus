@@ -14,6 +14,8 @@ var fs = require('fs');
 var getInsertObject = require('./modules/getInsertObject.js');
 var getTime = require('./modules/getTime.js');
 
+app.use('/static',express.static(__dirname+'/static'));
+
 app.get('/cytus', function(req, res) {
 	res.sendFile(__dirname+'/cytus.html', function() {
 		res.end();
