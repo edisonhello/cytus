@@ -7,9 +7,9 @@ var mongodb = require('mongodb');
 var mongo = mongodb.MongoClient;
 
 var config = require('./config.json');
-var getSongInfo = require('./static/getSongInfo');
+var getSongInfo = require('./modules/getSongInfo');
 
-console.log(getSongInfo.getSong("adventure"));
+console.log(getSongInfo("adventure"));
 
 
 var plist = require('plist');
