@@ -87,45 +87,45 @@ module.exports = function(original){
         case "chapter_k10":
             return getReturn("D", 10, "Music. The enternity of us", 2, 7);
         case "chapter_l01":
-            return getReturn("L", 1, "L1 : THE DEVASTATED", 3, 6);
+            return getReturn("L", 1, "L1 : THE DEVASTATED", 9, 9);
         case "chapter_l02":
-            return getReturn("L", 2, "L2 : ASCENSION TO THE UPPER", 4, 8);
+            return getReturn("L", 2, "L2 : ASCENSION TO THE UPPER", 9, 9);
         case "chapter_l03":
-            return getReturn("L", 3, "The Red Coronation", 5, 9);
+            return getReturn("L", 3, "L3 : ROAR, ON THE DESERTED LANDS", 9, 9);
         case "chapter_l04":
-            return getReturn("L", 4, "Forbidden Codex", 2, 7);
+            return getReturn("L", 4, "L4 : THE UNREVEALED", 9, 9);
         case "chapter_l05":
-            return getReturn("L", 5, "Lnight of Firmament", 2, 7);
+            return getReturn("L", 5, "L5 : THE REVEALED", 9, 9);
         case "chapter_l06":
-            return getReturn("L", 6, "Lord of Crimson Rose", 2, 8);
+            return getReturn("L", 6, "L6 : VIZ AWAKENED", 9, 9);
         case "chapter_l07":
-            return getReturn("L", 7, "Predawn", 3, 7);
+            return getReturn("L", 7, "L7 : ALMIGHTY", 9, 9);
         case "chapter_l08":
-            return getReturn("L", 8, "The Fallen Bloom", 4, 7);
+            return getReturn("L", 8, "L8 : METEOR – FAREWELL", 9, 9);
         case "chapter_l09":
-            return getReturn("L", 9, "Where You Are Not", 4, 8);
+            return getReturn("L", 9, "L9 : METRO - MOURN", 9, 9);
         case "chapter_l10":
-            return getReturn("L", 10, "Music. The enternity of us", 2, 7);
+            return getReturn("L", 10, "L10 : IN MEMORY OF MANEO.", 9, 9);
         case "chapter_l01_d":
-            return getReturn("L", 1, "L1 : THE DEVASTATED", 3, 6);
+            return getReturn("L", 1, "L1 : THE DEVASTATED", 8, 9);
         case "chapter_l02_d":
-            return getReturn("L", 2, "L2 : ASCENSION TO THE UPPER", 4, 8);
+            return getReturn("L", 2, "L2 : ASCENSION TO THE UPPER", 7, 9);
         case "chapter_l03_d":
-            return getReturn("L", 3, "The Red Coronation", 5, 9);
+            return getReturn("L", 3, "L3 : ROAR, ON THE DESERTED LANDS", 7, 9);
         case "chapter_l04_d":
-            return getReturn("L", 4, "Forbidden Codex", 2, 7);
+            return getReturn("L", 4, "L4 : THE UNREVEALED", 7, 9);
         case "chapter_l05_d":
-            return getReturn("L", 5, "Lnight of Firmament", 2, 7);
+            return getReturn("L", 5, "L5 : THE REVEALED", 7, 8);
         case "chapter_l06_d":
-            return getReturn("L", 6, "Lord of Crimson Rose", 2, 8);
+            return getReturn("L", 6, "L6 : VIZ AWAKENED", 8, 9);
         case "chapter_l07_d":
-            return getReturn("L", 7, "Predawn", 3, 7);
+            return getReturn("L", 7, "L7 : ALMIGHTY", 8, 9);
         case "chapter_l08_d":
-            return getReturn("L", 8, "The Fallen Bloom", 4, 7);
+            return getReturn("L", 8, "L8 : METEOR – FAREWELL", 8, 9);
         case "chapter_l09_d":
-            return getReturn("L", 9, "Where You Are Not", 4, 8);
+            return getReturn("L", 9, "L9 : METRO - MOURN", 6, 9);
         case "chapter_l10_d":
-            return getReturn("L", 10, "Music. The enternity of us", 2, 7);
+            return getReturn("L", 10, "L10 : IN MEMORY OF MANEO.", 6, 8);
         default:
             return original;
     }
