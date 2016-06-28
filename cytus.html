@@ -9,14 +9,14 @@
 
 
     <select id="which">
-        <option id="headopt">choose which</option>
+        <option id="which_headopt">choose which</option>
     </select>
-    <select id="mod">
-    <option id="showall">show all</option>
-        <option id="diff">diff</option>
-    </select>
+    <div id="showmod">
+    </div>
+    <div id="compw">
+    </div>
 
-    <input type="button" id="update">
+    <!--<input type="button" id="update">-->
 
     <div id="showps" class="ps"></div>
     <table id="here"></table>
@@ -53,33 +53,74 @@
     socket.on('this is all',function(all){
         console.log(all);
         for(var i=0;i<all.length;i++){
-            $('#headopt').after("<option value='"+i+"'>"+(all[i]["time"])+"</option>");
+            $('#which_headopt').after("<option value='"+i+"'>"+(all[i]["time"])+"</option>");
         }
 
 
-        document.getElementById('update').onclick = function(){
-            var choosed = document.getElementById('which').value;
-            var mod = document.getElementById('mod').value;
-
-            var append = "";
-            var mainobj = all[choosed];
-            if(mod=="show all"){
-                viewthis = all[choosed];
-                console.log(viewthis);
-                
-                append = makeallAppend(viewthis);
-            }
-            if(mod=="diff"){
-                var comp = [all[choosed-1],all[choosed]];
-                console.log(comp);
-
-                append = makeDiff(comp);
-            }
+        document.getElementById('which').onchange = function(){
+            $('#showmod').empty();
+            $('#compw').empty();
             $('#here').empty();
-            $('#here').append(append);
-
             $('#showps').empty();
-            $('#showps').append(mainobj["ps"]);
+            var choosed = document.getElementById('which').value;
+            if(choosed!=0){
+                $('#showmod').append('\
+                    <select id="mod">\
+                        <option id="mod.headopt">select mod</option>\
+                        <option id="showall">show all</option>\
+                        <option id="diff">diff</option>\
+                    </select>');
+            }
+            else{
+                $('#showmod').append('\
+                    <select id="mod">\
+                        <option id="mod.headopt">select mod</option>\
+                        <option id="showall">show all</option>\
+                    </select>');
+            }
+
+            document.getElementById('mod').onchange = function(){
+                $('#compw').empty();
+                var mod = document.getElementById('mod').value;
+                var append = "";
+                var mainobj = all[choosed];
+                if(mod=="show all"){
+                    viewthis = all[choosed];
+                    console.log(viewthis);
+                    
+                    append = makeallAppend(viewthis);
+                    $('#here').empty();
+                    $('#here').append(append);
+
+                    $('#showps').empty();
+                    $('#showps').append(mainobj["ps"]);
+                }
+                if(mod=="diff"){
+                    $('#compw').append('\
+                        <select id="compww">\
+                        </select>');
+                    $('#compww').append("<option id='compww_headopt'></option>")
+                    for(var i=0;i<choosed;i++){
+                        $('#compww_headopt').after("<option value='"+i+"'>"+(all[i]["time"])+"</option>");
+                        console.log(i)
+                    }
+                    //$('#compww_headopt').remove();
+                    document.getElementById('compww').onchange = function(){
+                        console.log("onchange")
+                        var getcompw = document.getElementById('compww').value;
+                        var comp = [all[getcompw],all[choosed]];
+                        console.log(comp);
+
+                        append = makeDiff(comp);
+
+                        $('#here').empty();
+                        $('#here').append(append);
+
+                        $('#showps').empty();
+                        $('#showps').append(mainobj["ps"]);
+                    }
+                }
+            }
         }
     })
 
