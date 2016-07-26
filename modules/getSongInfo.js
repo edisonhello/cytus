@@ -150,6 +150,186 @@ module.exports = function(original){
             return getReturn("M", 10, "Storia", 7, 9);
         case "chapter_m_theme":
             return getReturn("M", 0, "The Beginning", 3, 7);
+        case "chapter_t01":
+            return getReturn("T", 1, "Penglaimovement", 3, 8);
+        case "chapter_t02":
+            return getReturn("T", 2, "Aboriginal", 4, 7);
+        case "chapter_t03":
+            return getReturn("T", 3, "Dutch Formosa", 7, 9);
+        case "chapter_t04":
+            return getReturn("T", 4, "Empire of Japan", 2, 5);
+        case "chapter_t05":
+            return getReturn("T", 5, "Money & Money", 5, 7);
+        case "chapter_t06":
+            return getReturn("T", 6, "Phubbing", 4, 8);
+        case "chapter_t07":
+            return getReturn("T", 7, "Protest", 6, 9);
+        case "chapter_t08":
+            return getReturn("T", 8, "Catastrophe", 4, 8);
+        case "chapter_t09:
+            return getReturn("T", 9, "Rebirth", 3, 6);
+        case "chapter_t10":
+            return getReturn("T", 10, "A New Home", 5, 8);
+        case "chemical_star":
+            return getReturn(1, 3, "Chemical Star", 1, 6);
+        case "chocological":
+            return getReturn(5, 5, "chocological", 3, 6);
+        case "code03":
+            return getReturn(8, 9, "Code03", 2, 6);
+        case "codenamezero":
+            return getReturn(9, 10, "Codename：Zero", 7, 9);
+        case "colorful_skies":
+            return getReturn(6, 4, "Colorful Skies", 4, 9);
+        case "coma":
+            return getReturn(9, 9, "COMA", 4, 8);
+        case "conflict":
+            return getReturn("R", 10, "conflict", 8, 9);
+        case "conflict_ym2151_edit":
+            return getReturn("R", "10_", "conflict (YM2151 Edit)", 4, 7);
+        case "cosmo":
+            return getReturn(3, 3, "COSMO", 5, 7);
+        case "darkness":
+            return getReturn(4, 7, "DARKNESS", 5, 8);
+        case "devil_in_wonderland":
+            return getReturn("R", 9, "devil in wonderland", 4, 9);
+        case "dino":
+            return getReturn(5, 2, "DINO", 4, 7);
+        case "diskord":
+            return getReturn("P", 6, "Diskord", 4, 7);
+        case "donotwake":
+            return getReturn(10, 9, "DO NOT WAKE", 4, 9);
+        case "dragonwarrior":
+            return getReturn(6, 1, "Dragon Warrior", 3, 7);
+        case "dream_chiptune_edit":
+            return getReturn("R", 6, "Dream (Chiptune Edit)", 3, 7  );
+        case "drg":
+            return getReturn(1, 8, "D R G", 4, 7);
+        case "eastwestwobble":
+            return getReturn(9, 7, "East West Wobble", 5, 8);
+        case "endlessjourney":
+            return getReturn("P", 2, "Endless Journey", 2, 7);
+        case "entrance":
+            return getReturn(2, 8, "entrance", 6, 9);
+        case "evil_force":
+            return getReturn(4, 1, "Evil Force", 4, 8);
+        case "fightwith_yourdevil":
+            return getReturn("R", 8, "fight with your devil", 5, 9);
+        case "finitecircuit":
+            return getReturn(10, 7, "Finite circuit", 4, 7);
+        case "firstgate:
+            return getReturn(9, 4, "First Gate", 4, 8);
+        case "firstgate_overdrive":
+            return getReturn(9, "4_", "First Gate OVERDRIVE", 7, 9);
+        case "FREEDOM DIVE":
+            return getReturn(10, 1, "FREEDOM DIVE", 6, 9);
+        case "futureworld":
+            return getReturn(4, 4, "Future world", 4, 7);
+        case "galaxycollapse":
+            return getReturn(7, 3, "Galaxy Collapse", 6, 8);
+        case "gateofexpectancy":
+            return getReturn(7, 5, "Gate of Expectancy", 5, 8);
+        case "gatorix":
+            return getReturn(10, 10, "GATORIX", 6, 9);
+        case "green_eyes":
+            return getReturn(2, 4, "Green Eyes", 4, 8);
+        case "halcyon":
+            return getReturn(3, 7, "Halcyon", 7, 9);
+        case "halloweenparty":
+            return getReturn(10, 2, "HALLOWEEN PARTY", 4, 9);
+        case "hard_landing":
+            return getReturn(2, 7, "Hard Landing", 2, 8);
+        case "hay_fields":
+            return getReturn("R", 4, "Hay Fields", 3, 8);
+        case "hercule":
+            return getReturn(7, 9, "Hercule", 5, 7);
+        case "hersword":
+            return getReturn(8, 2, "Her Sword", 2, 7);
+        case "heywonder":
+            return getReturn(9, 2, "Hey wonder ~人生は不思議~", 3, 6);
+        case "holyknight":
+            return getReturn(5, 1, "HOLY KNIGHT", 5, 8);
+        case "infernus":
+            return getReturn("P", 7, "Infernus", 5, 8);
+        case "iris":
+            return getReturn(2, 1, "Iris", 3, 7);
+        case "jumptothefuture":
+            return getReturn("R", 2, "Jump to the future", 6, 8);
+        case "just_a_trip":
+            return getReturn(5, 8, "just_a_trip", 4, 8);
+        case "l2_a":
+            return getReturn(7, "4_", "L2(Ver.A)", 9, 9);
+        case "l2_b":
+            return getReturn(7, "4__", "L2(Ver.B)", 9, 9);
+        case "lll":
+            return getReturn(7, 4, "L", 9, 9);
+        case "landscape":
+            return getReturn(4, 3, "Landscape", 4, 7);
+        case "laplace":
+            return getReturn(8, 5, "Laplace", 4, 9);
+        case "letsgoon_anadventure":
+            return getReturn("R", 3, "Let's go on an adventure", 3, 9);
+        case "liberame":
+            return getReturn(3, 2, "Libera me", 5, 7);
+        case "lightupmylove":
+            return getReturn(1, 1, "Light up my LOVE", 3, 7);
+        case "lnsop":
+            return getReturn("P", 4, "LNS OP", 3, 6);
+        case "logicalsteps":
+            return getReturn(6, 7, "Logical Steps", 3, 8);
+        case "lollipop":
+            return getReturn(3, 4, "Prismatic Lollipop", 4, 7);
+        case "mandora":
+            return getReturn(1, 10, "Hot Air Balloon", 3, 5);
+        case "masquerade":
+            return getReturn(8, 1, "Masquerade", 3, 9);
+        case "megaera":
+            return getReturn("P", 8, "megaera", 4, 8);
+        case "moltoallegro":
+            return getReturn("S", 4, "Molto Allegro", 4, 7);
+        case "morpho":
+            return getReturn(8, 3, "Morpho", 5, 8);
+        case "":
+            return getReturn(, , "", , );
+        case "":
+            return getReturn(, , "", , );
+        case "":
+            return getReturn(, , "", , );
+        case "":
+            return getReturn(, , "", , );
+        case "":
+            return getReturn(, , "", , );
+        case "":
+            return getReturn(, , "", , );
+        case "":
+            return getReturn(, , "", , );
+        case "":
+            return getReturn(, , "", , );
+        case "":
+            return getReturn(, , "", , );
+        case "":
+            return getReturn(, , "", , );
+        case "":
+            return getReturn(, , "", , );
+        case "":
+            return getReturn(, , "", , );
+        case "":
+            return getReturn(, , "", , );
+        case "":
+            return getReturn(, , "", , );
+        case "":
+            return getReturn(, , "", , );
+        case "":
+            return getReturn(, , "", , );
+        case "":
+            return getReturn(, , "", , );
+        case "":
+            return getReturn(, , "", , );
+        case "":
+            return getReturn(, , "", , );
+        case "":
+            return getReturn(, , "", , );
+        case "":
+            return getReturn(, , "", , );
         default:
             return original;
     }
