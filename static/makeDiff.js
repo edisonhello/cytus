@@ -20,7 +20,7 @@ var makeDiff = function(comp){
                 append += "<td class='grn'>"+osong[0]["score"]+"</td>";
             }
             else{
-                append += "<td>"+osong[0]["score"]+"</td>";
+                append += "<td class='score'>"+osong[0]["score"]+"</td>";
             }
             if(nsong[0]["score"]>osong[0]["score"]){
                 append += "<td>&gt;&gt;</td>";
@@ -32,16 +32,22 @@ var makeDiff = function(comp){
                 append += "<td class='grn'>"+nsong[0]["score"]+"</td>";
             }
             else{
-                append += "<td>"+nsong[0]["score"]+"</td>";
+                append += "<td class='score'>"+nsong[0]["score"]+"</td>";
             }
             var osongTP = osong[0]["TP"].toFixed(2).toString();
             var nsongTP = nsong[0]["TP"].toFixed(2).toString();
 
             if(osong[0]["TP"]==100){
-                append += "<td class='grn'>"+osongTP+"</td><td>&gt;&gt;</td>";
+                append += "<td class='grn'>"+osongTP+"</td>";
             }
             else{
-                append += "<td>"+osongTP+"</td><td>&gt;&gt;</td>";
+                append += "<td>"+osongTP+"</td>";
+            }
+            if(nsong[0]["TP"]>osong[0]["TP"]){
+                append += "<td>&gt;&gt;</td>";
+            }
+            else{
+                append += "<td>==</td>";
             }
             if(nsong[0]["TP"]==100){
                 append += "<td class='grn'>"+nsongTP+"</td>";
@@ -63,7 +69,7 @@ var makeDiff = function(comp){
                 append += "<td class='grn'>"+osong[1]["score"]+"</td>";
             }
             else{
-                append += "<td>"+osong[1]["score"]+"</td>";
+                append += "<td class='score'>"+osong[1]["score"]+"</td>";
             }
             if(nsong[1]["score"]>osong[1]["score"]){
                 append += "<td>&gt;&gt;</td>"
@@ -75,16 +81,22 @@ var makeDiff = function(comp){
                 append += "<td class='grn'>"+nsong[1]["score"]+"</td>";
             }
             else{
-                append += "<td>"+nsong[1]["score"]+"</td>";
+                append += "<td class='score'>"+nsong[1]["score"]+"</td>";
             }
             var osongTP = osong[1]["TP"].toFixed(2).toString();
             var nsongTP = nsong[1]["TP"].toFixed(2).toString();
 
             if(osong[1]["TP"]==100){
-                append += "<td class='grn'>"+osongTP+"</td><td>&gt;&gt;</td>";
+                append += "<td class='grn'>"+osongTP+"</td>";
             }
             else{
-                append += "<td>"+osongTP+"</td><td>&gt;&gt;</td>";
+                append += "<td>"+osongTP+"</td>";
+            }
+            if(nsong[1]["TP"]>osong[1]["TP"]){
+                append += "<td>&gt;&gt;</td>";
+            }
+            else{
+                append += "<td>==</td>";
             }
             if(nsong[1]["TP"]==100){
                 append += "<td class='grn'>"+nsongTP+"</td>";

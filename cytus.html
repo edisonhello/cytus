@@ -106,7 +106,6 @@
                     }
                     //$('#compww_headopt').remove();
                     document.getElementById('compww').onchange = function(){
-                        console.log("onchange")
                         var getcompw = document.getElementById('compww').value;
                         var comp = [all[getcompw],all[choosed]];
                         console.log(comp);
@@ -119,6 +118,17 @@
                         $('#showps').empty();
                         $('#showps').append(mainobj["ps"]);
                     }
+                    var getcompw = document.getElementById('compww').value;
+                    var comp = [all[getcompw],all[choosed]];
+                    console.log(comp);
+
+                    append = makeDiff(comp);
+
+                    $('#here').empty();
+                    $('#here').append(append);
+
+                    $('#showps').empty();
+                    $('#showps').append(mainobj["ps"]);
                 }
             }
         }
