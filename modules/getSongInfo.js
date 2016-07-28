@@ -166,7 +166,7 @@ module.exports = function(original){
             return getReturn("T", 7, "Protest", 6, 9);
         case "chapter_t08":
             return getReturn("T", 8, "Catastrophe", 4, 8);
-        case "chapter_t09:
+        case "chapter_t09":
             return getReturn("T", 9, "Rebirth", 3, 6);
         case "chapter_t10":
             return getReturn("T", 10, "A New Home", 5, 8);
@@ -216,7 +216,7 @@ module.exports = function(original){
             return getReturn("R", 8, "fight with your devil", 5, 9);
         case "finitecircuit":
             return getReturn(10, 7, "Finite circuit", 4, 7);
-        case "firstgate:
+        case "firstgate":
             return getReturn(9, 4, "First Gate", 4, 8);
         case "firstgate_overdrive":
             return getReturn(9, "4_", "First Gate OVERDRIVE", 7, 9);
