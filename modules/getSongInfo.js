@@ -288,48 +288,132 @@ module.exports = function(original){
             return getReturn("S", 4, "Molto Allegro", 4, 7);
         case "morpho":
             return getReturn(8, 3, "Morpho", 5, 8);
-        case "":
-            return getReturn(, , "", , );
-        case "":
-            return getReturn(, , "", , );
-        case "":
-            return getReturn(, , "", , );
-        case "":
-            return getReturn(, , "", , );
-        case "":
-            return getReturn(, , "", , );
-        case "":
-            return getReturn(, , "", , );
-        case "":
-            return getReturn(, , "", , );
-        case "":
-            return getReturn(, , "", , );
-        case "":
-            return getReturn(, , "", , );
-        case "":
-            return getReturn(, , "", , );
-        case "":
-            return getReturn(, , "", , );
-        case "":
-            return getReturn(, , "", , );
-        case "":
-            return getReturn(, , "", , );
-        case "":
-            return getReturn(, , "", , );
-        case "":
-            return getReturn(, , "", , );
-        case "":
-            return getReturn(, , "", , );
-        case "":
-            return getReturn(, , "", , );
-        case "":
-            return getReturn(, , "", , );
-        case "":
-            return getReturn(, , "", , );
-        case "":
-            return getReturn(, , "", , );
-        case "":
-            return getReturn(, , "", , );
+        case "musik":
+            return getReturn(7, 8, "Musik", 4, 7);
+        case "new_world":
+            return getReturn(4, 2, "New world", 2, 6);
+        case "niflherimr":
+            return getReturn(6, 8, "Niflheimr", 3, 8);
+        case "nocturnal_type":
+            return getReturn(2, 5, "Nocturnal Type", 2, 7);
+        case "old_gold":
+            return getReturn(6, 9, "OLD GOLD", 3, 8);
+        case "oriens":
+            return getReturn(9, 1, "Oriens", 6, 9);
+        case "otome":
+            return getReturn(3, 5, "otome", 5, 7);
+        case "outsider":
+            return getReturn("S", 8, "Outsider", 2, 8);
+        case "parfums":
+            return getReturn(1, 6, "Les Parfums de L'Amour", 3, 6);
+        case "parousia":
+            return getReturn(4, 5, "Parousia", 6, 9);
+        case "ppate1":
+            return getReturn(2, "8_", "Precipitation at the Entrance", 6, 9);
+        case "ppate2":
+            return getReturn(2, "8__", "Precipitation at the Entrance II", 7, 9);
+        case "precipitation":
+            return getReturn(2, 6, "Precipitation", 7, 8);
+        case "precipitation2":
+            return getReturn(2, "6_", "Precipitation ver.B", 7, 9);
+        case "process":
+            return getReturn("P", 1, "Process", 2, 8);
+        case "purified":
+            return getReturn("S", 10, "purified", 5, 9);
+        case "qqq":
+            return getReturn(8, 6, "Q", 2, 9);
+        case "qualia":
+            return getReturn(9, 6, "Qualia", 4, 7);
+        case "quantumlabyrinth":
+            return getReturn(7, 7, "Quantum Labyrinth", 4, 7);
+        case "rainbow_night_sky_highway":
+            return getReturn(7, 6, "Rainbow Night Sky Highway", 6, 9);
+        case "rainoffire":
+            return getReturn("S", 3, "Rain of Fire", 2, 7);
+        case "realize":
+            return getReturn(6, 3, "Realize", 5, 7);
+        case "recollections":
+            return getReturn(5, 6, "Recollections", 6, 9);
+        case "redeyes":
+            return getReturn(10, 6, "Red Eyes", 2, 7);
+        case "requiem":
+            return getReturn("S", 9, "REQUIEM", 4, 9);
+        case "retrospective":
+            return getReturn(1, 7, "Retrospective", 3, 5);
+        case "reverence":
+            return getReturn(8, 10, "Reverence", 3, 8);
+        case "revoluxionist":
+            return getReturn("S", 5, "REVOLUXIONIST", 5, 9);
+        case "riddle_story":
+            return getReturn(3, 1, "The Riddle Story", 5, 8);
+        case "sacred":
+            return getReturn(2, 3, "Sacred", 5, 7);
+        case "saika":
+            return getReturn(3, 9, "Saika", 5, 7);
+        case "saika2":
+            return getReturn(3, "9_", "Saika ver.B", 6, 7);
+        case "sanctity":
+            return getReturn(2, 2, "Sanctity", 5, 7);
+        case "scherzo":
+            return getReturn(8, 7, "SCHERZO", 1, 7);
+        case "schwarz":
+            return getReturn("S", 1, "LVBNR5 SCHWARZ", 2, 7);
+        case "secret_garden":
+            return getReturn(1, 9, "Secret Garden", 3, 7);
+        case "selfish_gene":
+            return getReturn(6, 2, "Selfish Gene", 3, 6);
+        case "setfree":
+            return getReturn(10, 8, "Set Free (KIVA Edition)", 2, 6);
+        case "shootout":
+            return getReturn("P", 3, "Shoot out", 4, 7);
+        case "Skuld":
+            return getReturn(4, 6, "Skuld", 2, 6);
+        case "sleepless_jasmine":
+            return getReturn(5, 4, "Sleepless Jasmine", 2, 6);
+        case "slit":
+            return getReturn(8, 4, "Slit", 3, 8);
+        case "solarwind":
+            return getReturn(10, 5, "Solar Wind", 5, 8);
+        case "spectrum":
+            return getReturn(3, 6, "Spectrum", 4, 5);
+        case "sweetness_and_love":
+            return getReturn(4, 10, "Sweetness and Love", 4, 8);
+        case "The Silence":
+            return getReturn(1, 7, "The Silence", 1, 7);
+        case "theblocksweloved":
+            return getReturn(6, 10, "THE BLOCKS WE LOVED", 2, 9);
+        case "thelastillusion":
+            return getReturn(7, 2, "The Last Illusion", 4, 8);
+        case "themeofkingdom_no8":
+            return getReturn("R", 1, "Theme of Kingdom No 8", 4, 7);
+        case "to_further_dream":
+            return getReturn(9, 8, "To Further Dream", 4, 8);
+        case "total_sphere":
+            return getReturn(5, 7, "Total Sphere", 6, 8);
+        case "twentyone":
+            return getReturn(10, 4, "Twenty One", 4, 7);
+        case "ververg":
+            return getReturn(1, 2, "Ververg", 4, 7);
+        case "ververg2":
+            return getReturn(1, "2_", "Ververg ver.B", 4, 9);
+        case "violet":
+            return getReturn("P", 8, "Violet", 3, 9);
+        case "visions":
+            return getReturn(1, 5, "Visions", 1, 7);
+        case "vitmaster":
+            return getReturn("R", 7, "VitMaster", 6, 8);
+        case "vivere":
+            return getReturn("S", 2, "VIVERE LA VITA", 3, 7);
+        case "warlordsofatlantis":
+            return getReturn(9, 7, "Warlords of Atlantis", 5, 8);
+        case "weis":
+            return getReturn("S", 6, "LVBNR5 WEIβ", 2, 6);
+        case "wonderful_world":
+            return getReturn(6, 5, "It's a wonderful world", 3, 6);
+        case "yurero":
+            return getReturn(10, 3, "YURERO～時間は過ぎ去ってイクから～", 4, 7);
+        case "zauberkugel":
+            return getReturn(5, 9, "Zauberkugel", 4, 9);
         default:
             return original;
     }
