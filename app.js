@@ -7,14 +7,22 @@ var mongodb = require('mongodb');
 var mongo = mongodb.MongoClient;
 
 var config = require('./config.json');
+// var getSongInfo = require('./modules/getSongInfo');
+
+// console.log(getSongInfo("adventure"));
+
 
 var plist = require('plist');
 var fs = require('fs');
 
+// <<<<<<< HEAD
 var getInsertObject = require('./modules/getInsertObject.js');
 var getTime = require('./modules/getTime.js');
 
 app.use('/cytus/static',express.static(__dirname+'/static'));
+// =======
+// app.use('/static',express.static(__dirname+'/static'));
+// >>>>>>> songname
 
 app.get('/cytus', function(req, res) {
 	res.sendFile(__dirname+'/cytus.html', function() {
