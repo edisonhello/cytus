@@ -26,11 +26,12 @@
 <script src="/socket.io/socket.io.js"></script>
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
+<script src="/cytus/static/getSongInfo.js"></script>
 <script src="/cytus/static/makeallAppend.js"></script>
 <script src="/cytus/static/makeDiff.js"></script>
 <script>
     var socket = io("http://weak.infor.org");
-
+// console.log(getSongInfo("adventure"))
     var content;
     function getfile(event){
         var file = event.target.files[0];

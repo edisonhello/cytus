@@ -1,7 +1,9 @@
+// document.write('<script type="text/javascript" src="/cytus/static/getSongInfo.js"></'+'script>');
+console.log(getSongInfo("adventure"))
 var makeallAppend = function(viewthis){
     var append = "<tr><td>";
     append += viewthis["time"] + "</tr>";
-    append += "<tr><td>song name</td><td class='midtitle'>score</td><td class='midtitle'>TP</td><td>times</td></tr>";
+    append += "<tr><td>chap</td><td>easy</td><td>hard</td><td>song name</td><td class='midtitle'>score</td><td class='midtitle'>TP</td><td>times</td></tr>";
     for(var key in viewthis["score"]){
         var song = viewthis["score"][key];
         append += "<tr";
@@ -9,12 +11,23 @@ var makeallAppend = function(viewthis){
             append += " class='TPh'"
         }
         append += ">"
-
-        append += "<td rowspan='2'";
+        
+        var info = getSongInfo(key)
+    //
+    if(info["name"]==undefined)console.log(info)
+    //
         if(song[0]["score"]!=1000000 || song[1]["score"]!=1000000){
-            append += " class='ptsuM'";
+            append += "<td rowspan='2' class='ptsuM'>"+info["chapter"]+"-"+info["number"]+"</td>";
+            append += "<td rowspan='2' class='ptsuM'>"+info["easy"]+"</td>";
+            append += "<td rowspan='2' class='ptsuM'>"+info["hard"]+"</td>";
+            append += "<td rowspan='2' class='ptsuM'>"+info["name"]+"</td>";
         }
-        append += ">"+key+"</td>";
+        else{
+            append += "<td rowspan='2'>"+info["chapter"]+"-"+info["number"]+"</td>";
+            append += "<td rowspan='2'>"+info["easy"]+"</td>";
+            append += "<td rowspan='2'>"+info["hard"]+"</td>";
+            append += "<td rowspan='2'>"+info["name"]+"</td>";
+        }
         var fixTP = [],strTP = [],lenTP = [];
         fixTP[0] = song[0]["TP"].toFixed(2);
         fixTP[1] = song[1]["TP"].toFixed(2);
