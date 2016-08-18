@@ -33,7 +33,22 @@
 <script src="/cytus/static/makeDiff.js"></script>
 <script>
     var socket = io("http://weak.infor.org");
-// console.log(getSongInfo("adventure"))
+
+    var askpw = function(){
+        var password
+        do{
+            password = prompt("jizz");
+        }while(password == "" || password == null);
+        socket.emit('cytus_chk pass',password)
+    }
+    askpw();
+    socket.on('cytus_corr',function(){
+        socket.emit('cytus_give all');
+    })
+    socket.on('cytus_incor',function(){
+        askpw();
+    })
+
     var content;
     function getfile(event){
         var file = event.target.files[0];
@@ -46,18 +61,17 @@
 
     document.getElementById('sub').onclick = function(){
         var ps = document.getElementById('ps').value;
-        console.log(content)
+        console.log([content])
         if(content!=undefined){
-            socket.emit('xml',content,ps);
+            socket.emit('cytus_xml',content,ps);
         }
     }
     document.getElementById('disconnect').onclick = function(){
         socket.disconnect();
     }
 
-    socket.emit('give all');
-    socket.on('this is all',function(all){
-        console.log(all);
+    socket.on('cytus_this is all',function(all){
+        console.log([all]);
         for(var i=0;i<all.length;i++){
             $('#which_headopt').after("<option value='"+i+"'>"+(all[i]["time"])+"</option>");
         }
@@ -140,7 +154,7 @@
         }
     })
 
-    socket.on('insdone',function(){
+    socket.on('cytus_insdone',function(){
         location.reload();
     })
 </script>

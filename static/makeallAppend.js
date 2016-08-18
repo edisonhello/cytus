@@ -1,5 +1,3 @@
-// document.write('<script type="text/javascript" src="/cytus/static/getSongInfo.js"></'+'script>');
-console.log(getSongInfo("adventure"))
 var makeallAppend = function(viewthis){
     var append = "<tr><td>";
     append += viewthis["time"] + "</tr>";

@@ -29,9 +29,14 @@ app.get('/cytus', function(req, res) {
 		res.end();
 	});
 });
+app.get('/sdvx', function(req, res) {
+	res.sendFile(__dirname+'/cytus.html', function() {
+		res.end();
+	});
+});
 
 io.on('connection',function(socket){
-    socket.on('xml',function(str,ps){
+    socket.on('cytus_xml',function(str,ps){
         var res = plist.parse(str); 
         var obj = getInsertObject(res);
         
@@ -39,20 +44,29 @@ io.on('connection',function(socket){
             if(err) throw err;
             var ins = {time:getTime(),score:obj,ps:ps}
             db.collection('cytus').insert(ins);
-            socket.emit('insdone');
+            socket.emit('cytus_insdone');
         })
     })
 
-    socket.on('give all',function(){
+    socket.on('cytus_give all',function(){
         mongo.connect('mongodb://localhost:27017/cytus',function(err,db){
             db.collection('cytus').find({},{_id:0},function(err,res){
                 if(err) throw err;
                 res.toArray(function(err,res){
                     if(err) throw err;
-                    socket.emit('this is all',res);
+                    socket.emit('cytus_this is all',res);
                 })
             })
         })
+    })
+
+    socket.on('cytus_chk pass',function(pass){
+        if(pass == config.cytus_pass){
+            socket.emit('cytus_corr');
+        }
+        else{
+            socket.emit('cytus_incor');
+        }
     })
 })
 
