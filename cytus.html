@@ -9,11 +9,13 @@
 
 
     <select id="which">
-        <option id="which_headopt">choose which</option>
+        <option id="which_headopt" value="-1">choose which</option>
     </select>
     <div id="showmod">
     </div>
     <div id="compw">
+    </div>
+    <div id="sortarea">
     </div>
 
     <!--<input type="button" id="update">-->
@@ -83,19 +85,24 @@
             $('#here').empty();
             $('#showps').empty();
             var choosed = document.getElementById('which').value;
-            if(choosed!=0){
+            if(choosed == 0){
                 $('#showmod').append('\
                     <select id="mod">\
                         <option id="mod.headopt">select mod</option>\
                         <option id="showall">show all</option>\
-                        <option id="diff">diff</option>\
                     </select>');
+            }
+            else if(choosed == -1){
+                $('#showmod').empty();
+                $('#compw').empty();
+                $('#sort').empty();
             }
             else{
                 $('#showmod').append('\
                     <select id="mod">\
                         <option id="mod.headopt">select mod</option>\
                         <option id="showall">show all</option>\
+                        <option id="diff">diff</option>\
                     </select>');
             }
 
@@ -105,15 +112,26 @@
                 var append = "";
                 var mainobj = all[choosed];
                 if(mod=="show all"){
-                    viewthis = all[choosed];
-                    console.log(viewthis);
+                    console.log(mainobj);
                     
-                    append = makeallAppend(viewthis);
-                    $('#here').empty();
-                    $('#here').append(append);
+                    makeallAppend(mainobj);
+                    $('#sortarea').empty();
+                    $('#sortarea').append('\
+                        <select id="sort">\
+                            <option value="none">no sort</option>\
+                            <option value="chapter">chapter</option>\
+                            <option value="name">song name</option>\
+                            <option value="easy">easy</option>\
+                            <option value="hard">hard</option>\
+                            <option value="TP">TP</option>\
+                            <option value="score">score</option>\
+                        </select>\
+                    ');
 
-                    $('#showps').empty();
-                    $('#showps').append(mainobj["ps"]);
+                    document.getElementById('sort').onchange = function(){
+                        var sortby = document.getElementById('sort').value;
+                        makeallAppend(mainobj,sortby)
+                    }
                 }
                 if(mod=="diff"){
                     $('#compw').append('\

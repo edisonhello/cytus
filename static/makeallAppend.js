@@ -1,7 +1,22 @@
-var makeallAppend = function(viewthis){
+var makeallAppend = function(viewthis,sort = "none"){
     var append = "<tr><td>";
     append += viewthis["time"] + "</tr>";
     append += "<tr><td>chap</td><td>easy</td><td>hard</td><td>song name</td><td class='midtitle'>score</td><td class='midtitle'>TP</td><td>times</td></tr>";
+
+    for(var key in viewthis["score"]){
+        var info = getSongInfo(key);
+        viewthis["score"][key]["info"] = info;
+        console.log(viewthis["score"][key]["info"])
+    }
+console.log(viewthis)
+    if(sort != "none"){
+        if(sort=="TP" || sort=="score"){
+            viewthis["score"] = viewthis["score"].sort(function(l,r){
+                return l["score"][key][1][sort] - r["score"][key][1][sort];
+            })
+        }
+    }
+
     for(var key in viewthis["score"]){
         var song = viewthis["score"][key];
         append += "<tr";
@@ -61,6 +76,10 @@ var makeallAppend = function(viewthis){
         append += "<td class='played'>"+song[1]["played"]+"</td>";
         append += "</tr>";
     }
+    
+    $('#here').empty();
+    $('#here').append(append);
 
-    return append;
+    $('#showps').empty();
+    $('#showps').append(viewthis["ps"]);
 }
